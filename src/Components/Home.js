@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const Home = () => {
     const quiz = useLoaderData([])
@@ -10,11 +10,11 @@ const Home = () => {
            {
             quizName.map(data =>(
                 <div key={data.id} className="card w-96 bg-base-100 shadow-xl">
-                    <figure className='bg-slate-200 hover:bg-slate-400'><img src={data.logo}/></figure>
+                    <figure className='bg-slate-200 hover:bg-slate-400'><img src={data.logo} alt=''/></figure>
                     <div className="flex justify-between items-center w-11/12 mx-auto">
                         <div className="badge badge-outline p-3">{data.name}</div>
-                        <button className="btn btn-outline btn-info btn-sm m-2">Responsive</button>
-
+                        <button className="btn btn-outline btn-info btn-sm m-2">start</button>
+                        <Link to={`../quiz/${data.id}`} className="btn">Link</Link>
                     </div>
                 </div>
             ))
