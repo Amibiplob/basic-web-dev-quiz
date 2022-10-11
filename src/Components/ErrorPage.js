@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 const ErrorPage = () => {
     return (
-        <div>
-            <h1>this is error page</h1>
-            <h1>back to home <Link to='/' title='Home'>Home</Link></h1>
+        <div className='grid grid-cols-1 place-content-center justify-items-center h-screen bg-red-200'>
+            <h1 className='text-5xl text-red-500'>Opps! error page</h1>
+            <h1 className='text-3xl mt-9'>Back to <Link to='/' title='Home' className='btn btn-success'>Home Page</Link></h1>
         </div>
     );
 };

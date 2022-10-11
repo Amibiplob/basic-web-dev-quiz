@@ -13,8 +13,7 @@ const Home = () => {
                     <figure className='bg-slate-200 hover:bg-slate-400'><img src={data.logo} alt=''/></figure>
                     <div className="flex justify-between items-center w-11/12 mx-auto">
                         <div className="badge badge-outline p-3">{data.name}</div>
-                        <button className="btn btn-outline btn-info btn-sm m-2">start</button>
-                        <Link to={`../quiz/${data.id}`} className="btn">Link</Link>
+                        <Link to={`../quiz/${data.id}`} className="btn btn-outline btn-info btn-sm m-2">Play Quiz</Link>
                     </div>
                 </div>
             ))

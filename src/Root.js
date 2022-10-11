@@ -1,11 +1,14 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLoaderData } from 'react-router-dom';
 import Footer from './Components/Footer';
 import Navbar from './Components/Navbar';
 const Root = () => {
+    const quiz = useLoaderData([])
+    const quizName = quiz.data;
+   // console.log(quiz.data)
     return (
         <div>
-            <Navbar></Navbar>
+            <Navbar quizName={quizName}></Navbar>
             <Outlet></Outlet>
             <Footer></Footer>
         </div>
