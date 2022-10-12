@@ -29,7 +29,7 @@ const Quiz = () => {
                     <div key={data.id}>
                         <div className='bg-slate-500 text-xl p-3 mt-5 flex justify-between items-center rounded text-white'>
                             <h1><span className='font-bold'>Quiz {count++} :</span> {data.question.slice(3, -4)}</h1>
-                            <button onClick={() => toast.success(data.correctAnswer, { autoClose: 5000 })}>
+                            <button title='See Correct Ans' onClick={() => toast.success(data.correctAnswer, { autoClose: 5000 })}>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                                     viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 md:w-6 h-6 md:mr-6">
                                     <path stroke-linecap="round"
