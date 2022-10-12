@@ -5,6 +5,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Quiz from './Components/Quiz';
 import ErrorPage from './Components/ErrorPage';
 import Blog from './Components/Blog';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const router = createBrowserRouter([
   {
     path : '/',
@@ -36,7 +39,18 @@ const router = createBrowserRouter([
 ])
 function App() {
   return (
-    <div>
+    <div className='bg-slate-200'>
+      <ToastContainer
+        position="top-center"
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     <RouterProvider router={router}></RouterProvider>
     </div>
   );

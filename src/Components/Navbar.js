@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = ({ quizName }) => {
-    // console.log(quizName);
+    //  console.log(quizName);
     return (
         <div className="navbar bg-base-100 md:w-4/5 mx-auto">
             <div className="navbar-start">
@@ -13,14 +13,14 @@ const Navbar = ({ quizName }) => {
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li> <NavLink to='home' title='Home'>Home</NavLink></li>
                         <li tabIndex={0}>
-                            <a className="justify-between">
+                            <Link className="justify-between">
                                 Quiz
                                 <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-                            </a>
+                            </Link>
                             <ul className="p-2">
                                 {
                                     quizName.map(data => (
-                                        <li>
+                                        <li key={data.id}>
                                             <Link to={`../quiz/${data.id}`} className="bg-white mb-1">{data.name}</Link>
                                         </li>
                                     ))}
@@ -42,14 +42,18 @@ const Navbar = ({ quizName }) => {
                         <ul tabIndex={0} className="dropdown-content menu shadow bg-base-100 rounded-box w-40">
                             {
                                 quizName.map(data => (
-                                    <li>
+                                    <li key={data.id}>
                                         <Link to={`../quiz/${data.id}`} className=" hover:bg-slate-300">{data.name}</Link>
                                     </li>
                                 ))}
-                           
+
                         </ul>
                     </li>
-                    <li className='hover:bg-slate-300 px-3'> <NavLink to='blog' title='Blog'>Blog</NavLink></li>
+                    <li className='hover:bg-slate-300'>
+                        <NavLink to='blog' title='Blog'>
+                            {({ isActive }) => (<span className={isActive ? 'bg-blue-100 text-blue-600 round p-2' : 'p-2'}>Blog</span>)}
+                        </NavLink> </li>
+
                 </ul>
             </div>
         </div>
