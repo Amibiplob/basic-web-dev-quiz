@@ -9,8 +9,8 @@ const Statistics = () => {
 
 
   return (
-    <div className='grid justify-center my-10'>
-      <LineChart width={600} height={300} data={quizName} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+    <div className='grid justify-center my-10 '>
+      <LineChart width={500} height={300} data={quizName} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
         <Line type="monotone" dataKey="total" stroke="#8884d8" />
         <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
         <XAxis dataKey="name" />

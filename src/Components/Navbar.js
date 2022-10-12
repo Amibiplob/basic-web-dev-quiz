@@ -27,6 +27,9 @@ const Navbar = ({ quizName }) => {
                             </ul>
                         </li>
                         <li> <NavLink to='blog' title='Blog'>Blog</NavLink></li>
+                        <li>
+                            <NavLink to='statistics' title='Statistics'>Statistics</NavLink>
+                        </li>
                     </ul>
                 </div>
                 <Link to='/' className="btn btn-ghost normal-case text-xl">Web Dev Quiz</Link>
