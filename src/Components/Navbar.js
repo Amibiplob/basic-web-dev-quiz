@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 const Navbar = ({ quizName }) => {
     //  console.log(quizName);
     return (
-        <div className="navbar bg-base-100 md:w-4/5 mx-auto">
+        <div className="navbar bg-base-100 md:w-11/12 mx-auto">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -29,7 +29,7 @@ const Navbar = ({ quizName }) => {
                         <li> <NavLink to='blog' title='Blog'>Blog</NavLink></li>
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost normal-case text-xl">MY Quiz</Link>
+                <Link to='/' className="btn btn-ghost normal-case text-xl">Web Dev Quiz</Link>
             </div>
             <div className="navbar-end hidden lg:flex">
                 <ul className="flex gap-6">
@@ -53,6 +53,11 @@ const Navbar = ({ quizName }) => {
                         <NavLink to='blog' title='Blog'>
                             {({ isActive }) => (<span className={isActive ? 'bg-blue-100 text-blue-600 round p-2' : 'p-2'}>Blog</span>)}
                         </NavLink> </li>
+                    <li className='hover:bg-slate-300'>
+                        <NavLink to='statistics' title='Statistics'>
+                            {({ isActive }) => (<span className={isActive ? 'bg-blue-100 text-blue-600 round p-2' : 'p-2'}>Statistics</span>)}
+                        </NavLink> 
+                        </li>
 
                 </ul>
             </div>

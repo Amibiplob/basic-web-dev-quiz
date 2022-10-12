@@ -7,6 +7,7 @@ import ErrorPage from './Components/ErrorPage';
 import Blog from './Components/Blog';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Statistics from './Components/Statistics';
 
 const router = createBrowserRouter([
   {
@@ -25,14 +26,19 @@ const router = createBrowserRouter([
        loader: () => fetch('https://openapi.programming-hero.com/api/quiz'),
        element: <Home></Home>,
      },
-      {
-        path: 'quiz/:id',
-        loader: ({params}) => fetch(`https://openapi.programming-hero.com/api/quiz/${params.id}`),
-        element: <Quiz></Quiz>,
+     {
+       path: 'quiz/:id',
+       loader: ({params}) => fetch(`https://openapi.programming-hero.com/api/quiz/${params.id}`),
+       element: <Quiz></Quiz>,
       },
       {
         path: 'blog',
         element: <Blog></Blog>,
+      },
+      {
+        path: 'statistics',
+        loader: () => fetch('https://openapi.programming-hero.com/api/quiz'),
+        element: <Statistics></Statistics>,
       },
     ]
   }
